@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Thymeleaf</title>
+</head>
+<style>
+    table {
+        width: 100%;
+    }
+</style>
+<body>
+<a href="/create">Create customer</a>
+<table border="1">
+    <tr>
+        <th>STT</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+    </tr>
+    <tr th:each="customer: ${customers}">
+        <td th:utext="${customer.getId()}"></td>
+        <td th:utext="${customer.getName()}"></td>
+        <td th:utext="${customer.getAddress()}"></td>
+        <td th:utext="${customer.getEmail()}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Customer</title>
+</head>
+<body>
+<h1>Are you sure you want to delete this customer?</h1><br>
+<form action="/delete/" method="post" th:object="${customerForm}">
+    <input type="text" name="id" th:value="*{id}" hidden>
+    <h1 th:utext="${deleteForm.name}"></h1>
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>
